@@ -33,7 +33,7 @@ public class QueryHelper {
      */
     public <T> T readWithinTx(Function<EntityManager, T> entityManagerConsumer) {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
-        entityManager.unwrap(Session.class).setDefaultReadOnly(true);
+//        entityManager.unwrap(Session.class).setDefaultReadOnly(true);
         try {
             entityManager.getTransaction().begin();
             T res = entityManagerConsumer.apply(entityManager);
